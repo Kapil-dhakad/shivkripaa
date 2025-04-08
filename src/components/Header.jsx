@@ -13,7 +13,7 @@ const Header = () => {
           <img className="w-[100px]" src={Logo} alt="Logo" />
         </div>
 
-        {/* Hamburger Menu Button */}
+        {/* Hamburger Button (Mobile) */}
         <button
           className="md:hidden text-gray-800 focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
@@ -21,20 +21,39 @@ const Header = () => {
           {isOpen ? <X size={30} /> : <Menu size={30} />}
         </button>
 
-        {/* Navigation Menu */}
+        {/* Nav Menu */}
         <nav
-          className={`absolute md:relative  left-0 w-full md:w-auto bg-white md:bg-transparent shadow-md md:shadow-none p-4 md:p-0 transition-all duration-300 ease-in-out ${
-            isOpen ? "block" : "hidden md:flex"
+          className={`absolute top-full left-0 w-full md:static md:w-auto bg-white md:bg-transparent shadow-md md:shadow-none px-6 md:px-0 transition-all duration-300 ease-in-out ${
+            isOpen ? "block" : "hidden md:block"
           }`}
         >
-          <ul className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 text-gray-800 font-semibold text-lg">
-              <li><a href="#home" className="hover:text-red-500">Home</a></li>
-              <li><a href="#about" className="hover:text-red-500">About</a></li>
-              <li><a href="#services" className="hover:text-red-500">Services</a></li>
-              <li><a href="#blog" className="hover:text-red-500">Blog</a></li>
-              <li><a href="#contact" className="hover:text-red-500">Contact</a></li>
-            </ul>
-
+          <ul className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 text-gray-800 font-semibold text-lg py-4 md:py-0">
+            <li>
+              <a href="#home" className="hover:text-red-500" onClick={() => setIsOpen(false)}>
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#about" className="hover:text-red-500" onClick={() => setIsOpen(false)}>
+                About
+              </a>
+            </li>
+            <li>
+              <a href="#services" className="hover:text-red-500" onClick={() => setIsOpen(false)}>
+                Services
+              </a>
+            </li>
+            <li>
+              <a href="#blog" className="hover:text-red-500" onClick={() => setIsOpen(false)}>
+                Blog
+              </a>
+            </li>
+            <li>
+              <a href="#contact" className="hover:text-red-500" onClick={() => setIsOpen(false)}>
+                Contact
+              </a>
+            </li>
+          </ul>
         </nav>
       </div>
     </header>
